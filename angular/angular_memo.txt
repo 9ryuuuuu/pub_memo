@@ -1,0 +1,99 @@
+
+【コマンド】
+■ TypeScript文法
+
+// プロパティの宣言
+[public / private] プロパティ名: データ型;
+private messageService: MessageService;
+private message: string;
+private messages: string[];
+
+■ コマンド
+
+// ヘルプ
+ng help
+
+// ワークスペースを新規作成
+ng new <workspace_name>
+
+// コンポーネントを作成する。
+ng generate component <component_name>
+
+// ビルドしてサーバを起動する
+ng serve --open
+
+// コマンドの詳細を見る(angularワークスペース内でないと使用できない。なぜ？)
+ng serve --help
+
+■ 文法
+[バインディング]
+
+// 変数バインディング
+htmlファイル内で{{ クラス変数名 }}
+<span>{{<クラス変数名>}}</span>
+<span>{{name}}</span>
+
+// イベントバインディング
+<li (click)="<クラスメソッド名(引数)>">click</li>
+<li (click)="onSelect(hero)">click</li>
+
+//プロパティバインディング
+ビューエレメントのプロパティに値を設定する
+<img [src]="heroImageUrl">
+<button [disabled]="isUnchanged">Cancel is disabled</button>
+
+// (CSSの)クラスバインディング(式を使う)
+[class.class-name]="式"
+<div [class.special]="isSpecial">The class binding is special</div>
+<div class="special" [class.special]="!isSpecial">This one is not so special</div>
+
+// 一般的なクラス指定
+<div class="bad curly special">Bad curly special</div>
+
+// クラスをバインディングでリネームする
+<div class="bad curly special" [class]="badCurly">Bad curly</div>
+
+// 双方向バインディング
+<input [(ngModel)]="<クラス変数名>"/>
+<input [(ngModel)]="selectedHero.name" placeholder="name" />
+
+// 入力バインディング
+https://angular.jp/guide/component-interaction
+
+@input() で変数をデコレートする。
+export class HeroChildComponent {
+  @Input() hero: Hero;
+}
+
+子コンポーネントの@input()でデコレートされたプロパティheroにデータを渡す。
+<app-hero-child *ngFor="let tmp of heroes" [hero]="tmp" > </app-hero-child>
+
+
+// NgModule
+@NgModuleデコレーターが付与されたクラス(例： app.module.ts)
+declarations： このモジュールに属するコンポーネントやディレクティブ
+imports: このモジュールが使用するほかのモジュール
+
+[構造ディレクティブ]
+// *ngFor
+繰り返しディレクティブ
+<li *ngFor="let hero of heroes">
+    {{hero.id}}: {{hero.name}}
+</li>
+
+[ルートの登録]
+Routesにパスとコンポーネントの対応を登録する。
+RouterModule.forRoot()の引数にそれを入れることで、パスとコンポーネントの対応を登録できる。
+
+
+■ リファレンス
+
+// パイプ
+https://angular.jp/api?type=pipe
+
+・RxJS
+https://rxjs-dev.firebaseapp.com/guide/observable
+
+・ https://angular.jp/tutorial/toh-pt4のgetHeroes()はなぜof(HEROES)を返すのか？
+Answer: Observableを返すから。
+https://stackoverflow.com/questions/47889210/why-we-should-use-rxjs-of-function
