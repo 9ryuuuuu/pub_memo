@@ -1,0 +1,66 @@
+
+■ 知識
+
+・Suites(組、一行)
+  describe関数は関係するspecsをグループ化する。
+
+・Specs(specificationの略)
+  it関数を呼ぶ。
+
+■ チュートリアル
+
+・using with node.js
+  https://jasmine.github.io/setup/nodejs.html
+
+・Your first suite
+  https://jasmine.github.io/tutorials/your_first_suite.html
+
+■ 基本的なコマンド
+
+・インストール
+  npm install jasmine
+
+・Init a Project
+  npx jasmine init
+
+  -> spec ディレクトリが作成される。
+
+・例を作成
+  npx jasmine examples
+
+・テストの実行
+
+  npx jasmine spec/jasmine_examples/PlayerSpec.js
+
+  npx jasmine ".\spec\test_examples\test*.js"
+  ※ 複数ファイルを実行
+
+■ コンフィグファイル
+
+・パス(デフォルトは下記。実行時オプションで指定可能)
+  spec/support/jasmine.json
+
+・内容
+{
+  // Spec directory path relative to the current working dir when jasmine is executed.
+  "spec_dir": "spec",
+
+  // Array of filepaths (and globs) relative to spec_dir to include and exclude
+  "spec_files": [
+    "**/*[sS]pec.js",
+    "!**/*nospec.js"
+  ],
+
+  // Array of filepaths (and globs) relative to spec_dir to include before jasmine specs
+  "helpers": [
+    "helpers/**/*.js"
+  ],
+
+  // Stop execution of a spec after the first expectation failure in it
+  "stopSpecOnExpectationFailure": false,
+
+  // Run specs in semi-random order
+  "random": false
+}
+
+

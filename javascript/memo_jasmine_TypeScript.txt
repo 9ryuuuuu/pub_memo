@@ -1,0 +1,13 @@
+
+
+■ 参考
+・ts-node
+  https://www.te-nu.com/entry/2017/11/11/184846
+
+・stackoverflow
+  https://stackoverflow.com/questions/30863565/unit-testing-using-jasmine-and-typescript
+
+・？？？
+  http://bisaga.com/blog/programming/testing-typescript-node-app-with-jasmine/
+
+
