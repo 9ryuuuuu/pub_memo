@@ -85,6 +85,22 @@ imports: このモジュールが使用するほかのモジュール
 Routesにパスとコンポーネントの対応を登録する。
 RouterModule.forRoot()の引数にそれを入れることで、パスとコンポーネントの対応を登録できる。
 
+■ 型定義ファイル
+
+・例
+"@types/jasmine": "~2.8.6",
+"@types/jasminewd2": "~2.0.3",
+"@types/node": "~8.9.4",
+
+素のJavascriptで使用されることを前提に作られたライブラリに対して、TypeScript用の型を定義するもの。
+
+・例えばJqueryの型定義ファイルをインストールするときは以下となる。
+npm install @types/jquery --save-dev
+
+・例
+xxx.d.ts
+
+
 
 ■ リファレンス
 

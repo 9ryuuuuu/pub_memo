@@ -1,0 +1,58 @@
+
+■ TypeScriptの使い方
+
+・内容
+5 minutes tutorial
+https://www.typescriptlang.org/docs/handbook/typescript-in-5-minutes.html
+
+・コンパイル
+tsc greeter.ts
+
+・インストール(グローバル)
+> npm install -g typescript
+
+・サンプルコード①
+以下のコードは素のJSなのでそのまま.jsファイルになるだけ。
+
+[greeter.js]
+function greeter(person) {
+    return "Hello, " + person;
+}
+let user = "Jane User";
+document.body.innerHTML = greeter(user);
+
+・サンプルコード②
+TypeScriptは以下のように型を定義できる。
+下記の場合、何の問題もなくコンパイルが通る。
+
+[greeter.js]
+function greeter(person: string) {
+    return "Hello, " + person;
+}
+let user = "Jane User";
+document.body.innerHTML = greeter(user);
+
+
+・サンプルコード③
+下記の場合、コンパイル時にエラーを出してくれる。
+
+[greeter.js]
+function greeter(person: string) {
+    return "Hello, " + person;
+}
+let user = [0, 1, 2];
+document.body.innerHTML = greeter(user);
+
+[エラー]
+sample_tsc/greeter.ts:7:35 - error TS2345: Argument of type 'number[]' is not assignable to parameter of type 'string'.
+
+7 document.body.innerHTML = greeter(user);
+
+Found 1 error.
+
+・interfacesやclass
+
+いい感じにゆるく、よしなにやってくれる。
+tutorial 参照
+
+

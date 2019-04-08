@@ -1,0 +1,21 @@
+
+■ 課題
+・jasmineの使い方を確認
+・ts-nodeコマンドの使い方を確認
+・ts-nodeコマンドを使用して、jasmineを使う方法を確認
+
+
+■ npxって何？
+
+ローカルにインストールしたnpmパッケージをお手軽に使用する方法
+
+npx <モジュール名>
+
+・npxを使用しない3通りの方法
+
+①./node_modules/.bin/<パッケージ名>
+
+②npm bin <パッケージ名>
+
+③package.jsonにnpm-scriptsを記述して実行する
+
