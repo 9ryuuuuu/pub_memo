@@ -1,0 +1,12 @@
+add-path.ps1 vim
+add-path.ps1 vscode
+add-path.ps1 miniconda
+add-path.ps1 pgsql
+add-path.ps1 git
+add-path.ps1 cmder
+add-path.ps1 7zip
+add-path.ps1 sha256sum
+add-path.ps1 java
+add-path.ps1 c++
+add-path.ps1 node10
+add-path.ps1 npm

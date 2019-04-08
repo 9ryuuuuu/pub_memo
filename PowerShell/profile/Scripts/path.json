@@ -1,0 +1,14 @@
+{
+    "vscode" : "C:\\Program Files\\Microsoft VS Code\\bin",
+    "vim" : "C:\\vim",
+    "miniconda" : "C:\\Users\\ruiak\\app\\miniconda3\\Scripts",
+    "pgsql" : "C:\\Users\\ruiak\\app\\pgsql\\bin",
+    "git" : "C:\\Users\\ruiak\\app\\Git\\bin",
+    "cmder" : "C:\\Users\\ruiak\\app\\cmder_mini",
+    "7zip" :"C:\\Users\\ruiak\\app\\7zip",
+    "sha256sum" : "C:\\Users\\ruiak\\app\\sha256sum",
+    "java" : "C:\\Users\\ruiak\\app\\java\\jdk1.8.0_181\\bin",
+    "node10" : "C:\\Users\\ruiak\\app\\node.js\\node-v10.15.3-win-x64",
+    "npm" : "C:\\Users\\ruiak\\AppData\\Roaming\\npm",
+    "c++" : "C:\\Users\\ruiak\\app\\mingw-w64\\x86_64-8.1.0-posix-seh-rt_v6-rev0\\mingw64\\bin"
+}
