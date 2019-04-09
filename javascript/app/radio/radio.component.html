@@ -1,0 +1,8 @@
+<form #myForm="ngForm">
+    <ng-container *ngFor="let b of books; index as i">
+        <label>
+            <input type="radio" name="book" id="book{{i}}" [(ngModel)]="selectBook" [value]="b.isbn"
+                [checked]="selectBook == b.isbn" (change)="show(i)">{{b.title}}
+        </label><br />
+    </ng-container>
+</form>
