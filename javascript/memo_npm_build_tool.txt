@@ -1,0 +1,33 @@
+
+■ 参考
+・メイン
+https://www.sitepoint.com/guide-to-npm-as-a-build-tool/
+
+・ちょっと参考
+https://www.webprofessional.jp/beginners-guide-node-package-manager/
+
+
+■ コマンド履歴
+・ディレクトリを作成して移動する。
+New-Item -ItemType Directory buildtool; cd buildtool
+
+・npm run-script <command>
+package.jsonのscriptsのコマンドを実行する。
+
+alias: run
+オプション: --silent, -s
+
+・npm test
+npm run-script test のショートカット
+
+・cleancssは別途cliのインストールが必要
+  npm install clean-css-cli --save-dev
+
+■ PowerShellでrecurseしながらexclude
+Get-ChildItem ./ -Recurse | Where-Object {$_.FullName -notlike "*\node_modules\*"}
+
+■ windowsでjshintでワイルドカードが指定できない
+× "lint": "echo '=> linting' && jshint assets/scripts/*.js"
+○ "lint": "echo '=> linting' && jshint assets/scripts/"
+
+
