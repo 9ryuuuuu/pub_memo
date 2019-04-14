@@ -1,0 +1,7 @@
+.example {
+    color: #ff0000;
+       }
+.example::after{
+    content: "\A" ;
+    white-space: pre;
+}
