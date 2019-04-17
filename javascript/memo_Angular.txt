@@ -1,4 +1,80 @@
 
+■ フォーカスが外れたら元の値、それ以外はカンマ区切りの値をテキストボックスに表示する
+
+・フォーカスが外れたらフォーマットに沿った表示にする。
+  https://swfz.hatenablog.com/entry/2017/08/29/021723
+  attribute directiveを使用して実装する。
+  フォーカスベントを取るには、attribute directiveのメソッドにHostListener(blur, focus)をデコレートする。
+
+・How to format input text value to currency on angular 4 on lost focus?
+  https://stackoverflow.com/questions/45794381/how-to-format-input-text-value-to-currency-on-angular-4-on-lost-focus
+  attribute directiveではなく、テンプレートに対応するコンポーネントで処理する。
+  テンプレートから $eventを渡し、それをHtmlElement型のelementで受け、element.target.value の値を書き換えることで実現する。
+
+
+・How to use pipes in Angular 5 reactive form input
+  https://stackoverflow.com/questions/49522542/how-to-use-pipes-in-angular-5-reactive-form-input
+  テンプレートで以下のようにする。とてもシンプル
+  formControlName="amount" [value]="myForm.get('amount').value | udpCurrency"
+  ※ フォーカスが外れたら、という観点はない。
+
+・Use pipe number In Input text
+  https://stackoverflow.com/questions/51360650/use-pipe-number-in-input-text
+  [ngModel]="price | number" は使用できないが、カスタムパイプならOK.
+  なのでカスタムパイプを作成する。
+
+
+
+■ リファレンス
+
+[HostListener]
+・DOMのイベントを補足して、メソッドに渡すデコレーター。
+  用途: attribute directiveに使用する。
+
+・公式
+  https://angular.io/api/core/HostListener
+
+
+[$eventオブジェクト]
+・公式
+  https://angular.jp/guide/user-input#event%E3%81%AE%E5%9E%8B
+
+・用途
+  attribute directiveでHostListenerの第二引数に渡す値に用いる。
+  ※ テンプレートから値を渡す場合は、テンプレート参照変数を使用すれば良い。
+
+[テンプレート参照変数] template reference variable
+・概要
+  テンプレートの値を簡単にコンポーネントに送ることができる。
+
+・例
+  <input #t1 type="text" (keyup)="onKeyup(t1.value)">
+  → t1というテンプレート参照変数を定義し、keyupイベントの際にonkeyup()に渡す。
+
+  コンポーネントでは下記のように受け取り、使用する。
+  onKeyup(s: string){
+    console.log(s);
+  }
+
+・Angular入門
+  https://angular.keicode.com/basics/template-reference-variables.php
+
+・公式
+  https://angular.io/guide/user-input
+  template reference variableで検索
+
+
+
+
+[RxJS]
+・RxJS
+https://rxjs-dev.firebaseapp.com/guide/observable
+
+・ https://angular.jp/tutorial/toh-pt4のgetHeroes()はなぜof(HEROES)を返すのか？
+Answer: Observableを返すから。
+https://stackoverflow.com/questions/47889210/why-we-should-use-rxjs-of-function
+
+
 【コマンド】
 ■ TypeScript文法
 
@@ -102,14 +178,3 @@ xxx.d.ts
 
 
 
-■ リファレンス
-
-// パイプ
-https://angular.jp/api?type=pipe
-
-・RxJS
-https://rxjs-dev.firebaseapp.com/guide/observable
-
-・ https://angular.jp/tutorial/toh-pt4のgetHeroes()はなぜof(HEROES)を返すのか？
-Answer: Observableを返すから。
-https://stackoverflow.com/questions/47889210/why-we-should-use-rxjs-of-function
