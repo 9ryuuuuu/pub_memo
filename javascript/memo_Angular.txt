@@ -1,4 +1,15 @@
 
+■ Angular Materialのチュートリアル
+★ 公式はわかりづらい
+
+・https://qiita.com/donuzium/items/c9af982b02a9c4a2aaa8
+  とりあえず Date Pickerを使うところまで書いてある。
+  日付表示をするために説明をよく読む必要がある。
+  ほかの必要なタグについても調べる。
+
+・https://qiita.com/pittanko_pta/items/4766a1dfb9a682b76181
+  Date Pickerの日本語化などが書いてある。
+
 ■ フォーカスが外れたら元の値、それ以外はカンマ区切りの値をテキストボックスに表示する
 
 ・フォーカスが外れたらフォーマットに沿った表示にする。
